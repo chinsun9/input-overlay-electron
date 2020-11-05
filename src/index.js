@@ -11,19 +11,22 @@ if (require('electron-squirrel-startup')) {
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 1000,
+    width: 600,
     height: 600,
     icon: __dirname + '/icon.ico',
     webPreferences: {
       nodeIntegration: true,
     },
+    titleBarStyle: 'hidden',
+    frame: false,
+    transparent: true,
   });
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 
   ioHook.on('keydown', (event) => {
     // console.info(event.keycode);

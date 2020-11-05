@@ -11,7 +11,7 @@ body {
   height: 100%;
   padding: 3%;
   overflow: hidden;
-  background: #222;
+  /* background: #222; */
   display: flex;
   justify-content: center;
   align-items: center;
