@@ -45,3 +45,19 @@ console.log(nodeAbi.getAbi('12.18.3', 'node'));
 - node-abi에서 구한 값을 targets에 넣어준다.
 - targets 이외의 값은 잘 몰라서 그냥 두었다.
 - 참고 ; https://wilix-team.github.io/iohook/usage.html#usage-with-electron
+
+## 이탤릭 div border 만들기
+
+- 참고 ; https://stackoverflow.com/questions/54320706/how-to-create-italic-box-in-css http://jsfiddle.net/tzn9jfh7/2/
+
+```css
+:root {
+  --skew-value: -20deg;
+}
+
+.box-container > div {
+  transform: skew(var(--skew-value));
+}
+```
+
+- 이런 css는 처음본다.. ㄷㄷ
