@@ -1,7 +1,6 @@
 const { app, BrowserWindow, screen } = require('electron');
 const path = require('path');
 const ioHook = require('iohook');
-const iohook = require('iohook');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
