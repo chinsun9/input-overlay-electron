@@ -1,6 +1,7 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, screen } = require('electron');
 const path = require('path');
 const ioHook = require('iohook');
+const iohook = require('iohook');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -10,9 +11,20 @@ if (require('electron-squirrel-startup')) {
 
 const createWindow = () => {
   // Create the browser window.
+
+  const width = 630;
+  const height = 290;
+  const margin = 30;
+
+  const {
+    width: max_width,
+    height: max_height,
+  } = screen.getPrimaryDisplay().workAreaSize;
+
+  console.log(max_width);
   const mainWindow = new BrowserWindow({
-    width: 300,
-    height: 300,
+    width: width,
+    height: height,
     icon: __dirname + '/icon.ico',
     webPreferences: {
       nodeIntegration: true,
@@ -20,6 +32,8 @@ const createWindow = () => {
     titleBarStyle: 'hidden',
     frame: false,
     transparent: true,
+    x: max_width - width - margin,
+    y: max_height - height - margin,
   });
 
   mainWindow.setAlwaysOnTop(true, 'screen');
@@ -32,13 +46,21 @@ const createWindow = () => {
   // mainWindow.webContents.openDevTools();
 
   ioHook.on('keydown', (event) => {
-    // console.info(event.keycode);
+    // console.info(event);
     mainWindow.webContents.send('keydown', event.rawcode);
   });
 
   ioHook.on('keyup', (event) => {
-    // console.info(event.keycode);
+    // console.info(event);
     mainWindow.webContents.send('keyup', event.rawcode);
+  });
+
+  ioHook.on('mousedown', (event) => {
+    mainWindow.webContents.send('mousedown', event.button);
+  });
+
+  ioHook.on('mouseup', (event) => {
+    mainWindow.webContents.send('mouseup', event.button);
   });
 
   ioHook.start();

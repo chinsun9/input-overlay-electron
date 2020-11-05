@@ -8,8 +8,6 @@ body {
     Arial, sans-serif;
   margin: auto;
   width: 100%;
-  height: 100%;
-  padding: 3%;
   overflow: hidden;
   /* background: #222; */
   display: flex;
@@ -20,7 +18,7 @@ body {
 .box-container {
   display: flex;
   flex-wrap: wrap;
-  width: 180px;
+  width: 350px;
 
   display: flex;
   flex-direction: row;
@@ -33,7 +31,7 @@ body {
 
 .box-container > div {
   min-width: 45px;
-  padding: 2px 0px 7px 0px;
+  padding: 4px 3px 14px 3px;
   text-align: center;
   margin: 3px;
   /* background-color: rgba(155, 155, 155, 0.164); */
@@ -43,13 +41,62 @@ body {
   font-weight: 500;
   border: 2px solid white;
   border-radius: 5px;
-
   transform: skew(var(--skew-value));
-
   box-shadow: 0px 0px 1px black, 0 0 1px inset black;
 }
 
-.box-container > div.keydown {
-  background-color: #ffeb3b6b;
-  -webkit-text-stroke: 0px rgb(155 155 155 / 85%);
+.box-container > div#nonekey {
+  box-shadow: none;
+  border: none;
 }
+
+.box-container > div#key-space {
+  min-width: 240px;
+}
+
+/* mouse area */
+.mouse {
+  color: black;
+
+  margin: 0 50px;
+  margin-right: 0px;
+  
+  width: 190px;
+}
+
+.mouse > .row > div {
+  display: inline-block;
+  background-color: #ffffff91;
+  height: 80px;
+  width: 50px;
+}
+
+#key-leftmousebutton {
+  padding: 10px 30px 10px 10px;
+  clip-path: ellipse(100% 100% at 100% 100%);
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px black, 0 0 1px inset black;
+}
+
+#key-rightmousebutton {
+  padding: 10px 30px 10px 10px;
+  clip-path: ellipse(100% 100% at 0% 100%);
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px black, 0 0 1px inset black;
+}
+
+#mousebody {
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px black, 0 0 1px inset black;
+  clip-path: polygon(100% 0, 75% 100%, 25% 100%, 0 0);
+
+  height: 150px;
+  width: 185px;
+}
+
+.keydown,
+.mouse > .row > div.keydown {
+  background-color: #ffeb3b6b;
+  -webkit-text-stroke: 1px rgb(0 0 0 / 80%);
+}
+q
