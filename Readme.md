@@ -1,10 +1,20 @@
 # input-overlay-electron
 
-![ ](/readmeRes/1.jpg)
+![ ](ReadmeRes/1.jpg)
 
 - OBS Input Overlay plugin clone coding
 - 오버워치 방송을 보다보면 화면에 키입력을 보여주는 프로그램이 있다.
 - 이런거를 한번 만들어보고 싶어서 시작
+
+## 데모
+
+[![ ](https://img.youtube.com/vi/VVTzGOGayYA/0.jpg)](https://www.youtube.com/watch?v=VVTzGOGayYA)
+
+## 기능
+
+- 입력키 오버레이 기능
+- 항상위에 오버레이
+- 오버레이 영역 마우스 클릭 무시
 
 ## 일렉트론
 
@@ -73,3 +83,4 @@ mainWindow.setIgnoreMouseEvents(true);
 
 - 항상위 세팅과
 - 마우스 이벤트를 무시하도록 설정이 가능하다. 진짜 오버레이처럼..!
+- 참고 ; http://electron.ebookchain.org/ko-KR/api/browser-window.html
