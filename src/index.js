@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
+const ioHook = require('iohook');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -23,6 +24,18 @@ const createWindow = () => {
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
+
+  ioHook.on('keydown', (event) => {
+    // console.info(event.keycode);
+    mainWindow.webContents.send('keydown', event.rawcode);
+  });
+
+  ioHook.on('keyup', (event) => {
+    // console.info(event.keycode);
+    mainWindow.webContents.send('keyup', event.rawcode);
+  });
+
+  ioHook.start();
 };
 
 // This method will be called when Electron has finished
