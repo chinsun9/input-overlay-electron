@@ -61,3 +61,13 @@ console.log(nodeAbi.getAbi('12.18.3', 'node'));
 ```
 
 - 이런 css는 처음본다.. ㄷㄷ
+
+## electron window 세팅
+
+```js index.js
+mainWindow.setAlwaysOnTop(true, 'screen');
+mainWindow.setIgnoreMouseEvents(true);
+```
+
+- 항상위 세팅과
+- 마우스 이벤트를 무시하도록 설정이 가능하다. 진짜 오버레이처럼..!
