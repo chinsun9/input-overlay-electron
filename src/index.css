@@ -27,18 +27,29 @@ body {
   justify-content: center;
 }
 
+:root {
+  --skew-value: -20deg;
+}
+
 .box-container > div {
-  min-width: 50px;
-  min-height: 50px;
+  min-width: 45px;
+  padding: 2px 0px 7px 0px;
   text-align: center;
   margin: 3px;
-  background-color: rgba(155, 155, 155, 0.164);
+  /* background-color: rgba(155, 155, 155, 0.164); */
   font-size: xx-large;
+  -webkit-text-stroke: 1px rgb(0 0 0 / 50%);
 
+  font-weight: 500;
   border: 2px solid white;
   border-radius: 5px;
+
+  transform: skew(var(--skew-value));
+
+  box-shadow: 0px 0px 1px black, 0 0 1px inset black;
 }
 
 .box-container > div.keydown {
-  background-color: red;
+  background-color: #ffeb3b6b;
+  -webkit-text-stroke: 0px rgb(155 155 155 / 85%);
 }
