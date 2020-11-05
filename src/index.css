@@ -20,15 +20,25 @@ body {
 .box-container {
   display: flex;
   flex-wrap: wrap;
-  width: 150px;
+  width: 180px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .box-container > div {
   min-width: 50px;
   min-height: 50px;
   text-align: center;
+  margin: 3px;
+  background-color: rgba(155, 155, 155, 0.164);
+  font-size: xx-large;
+
+  border: 2px solid white;
+  border-radius: 5px;
 }
 
-.keydown {
+.box-container > div.keydown {
   background-color: red;
 }

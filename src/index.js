@@ -11,8 +11,8 @@ if (require('electron-squirrel-startup')) {
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 600,
-    height: 600,
+    width: 200,
+    height: 200,
     icon: __dirname + '/icon.ico',
     webPreferences: {
       nodeIntegration: true,
@@ -21,6 +21,8 @@ const createWindow = () => {
     frame: false,
     transparent: true,
   });
+
+  mainWindow.setAlwaysOnTop(true, 'screen');
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
