@@ -16,6 +16,19 @@
 - 항상위에 오버레이
 - 오버레이 영역 마우스 클릭 무시
 
+## 실행
+
+- ⚠️ 노드 버전을 12.18.3 맞춰야 실행가능합니다
+- ⚠️ 윈도우 10, 64비트
+
+```sh
+npm i
+npm start
+
+# 설치파일 만들기 exe
+npm run build-installer
+```
+
 ## 일렉트론
 
 - 참고 ; [electron-practice](https://github.com/chinsun9/electron-practice)
@@ -27,10 +40,10 @@
 - electron을 8.5.3으로 다운그레이드하고
 
 ```js tmp.js
-const nodeAbi = require('node-abi');
+const nodeAbi = require("node-abi");
 
-console.log(nodeAbi.getAbi('8.5.3', 'electron'));
-console.log(nodeAbi.getAbi('12.18.3', 'node'));
+console.log(nodeAbi.getAbi("8.5.3", "electron"));
+console.log(nodeAbi.getAbi("12.18.3", "node"));
 ```
 
 - node-abi라는 것을 통해서 노드와 일렉트론 abi값을 구했다.
@@ -77,7 +90,7 @@ console.log(nodeAbi.getAbi('12.18.3', 'node'));
 ## electron window 세팅
 
 ```js index.js
-mainWindow.setAlwaysOnTop(true, 'screen');
+mainWindow.setAlwaysOnTop(true, "screen");
 mainWindow.setIgnoreMouseEvents(true);
 ```
 
